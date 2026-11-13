@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vitória Tayná · Portfólio</title>
+<meta name="description" content="Estudante de Engenharia da Computação e ADS em Recife. Python, SQL, Excel e desenvolvimento web, com experiência em Departamento Pessoal e RH.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --ink:#14213d; --muted:#55627a; --line:#d9dee7;
+  --accent:#1f7a5a; --accent-ink:#ffffff; --flag:#b26b00; --flag-bg:#fff3d6; --ok-bg:#e1f3ea;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1626; --surface:#162136; --ink:#e8edf6; --muted:#9aa8c2; --line:#26344f;
+    --accent:#4fc99a; --accent-ink:#06261b; --flag:#f0b44a; --flag-bg:#3a2d12; --ok-bg:#12342a;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1626; --surface:#162136; --ink:#e8edf6; --muted:#9aa8c2; --line:#26344f;
+  --accent:#4fc99a; --accent-ink:#06261b; --flag:#f0b44a; --flag-bg:#3a2d12; --ok-bg:#12342a;
+}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,4vw,2.1rem);margin-bottom:1.5rem}
+p{margin:0 0 1rem;max-width:62ch}
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+
+/* topo */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:1rem;height:56px}
+.brand{font-family:var(--display);font-weight:700;text-decoration:none;white-space:nowrap}
+nav{margin-left:auto;display:flex;gap:1.1rem;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem;white-space:nowrap;padding:.25rem 0}
+nav a:hover{color:var(--ink)}
+#tema{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex:none}
+
+/* hero */
+.hero{border-top:0;padding:4rem 0 4.5rem}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:56rem){.hero-grid{grid-template-columns:1.05fr 1fr}}
+.hero h1{font-size:clamp(2.2rem,6.4vw,3.6rem);font-weight:700;margin-bottom:1.25rem}
+.hero .lead{font-size:1.15rem;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.btn{display:inline-block;padding:.7rem 1.25rem;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--accent);transition:transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+
+/* planilha do hero */
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sheet-top{display:flex;justify-content:space-between;gap:.5rem;align-items:center;padding:.7rem 1rem;border-bottom:1px solid var(--line);font-size:.9rem;font-weight:500}
+.sheet-top span{color:var(--muted);font-weight:400}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.82rem}
+th,td{padding:.55rem .8rem;text-align:left;white-space:nowrap;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:500;background:color-mix(in srgb,var(--bg) 60%,var(--surface))}
+td.n{text-align:right}
+tr.flag td{background:var(--flag-bg)}
+tr.flag td:last-child{color:var(--flag);font-weight:500}
+tr.fixed td{background:var(--ok-bg)}
+td,tr{transition:background-color .4s}
+.status-ok{color:var(--accent)}
+.sheet-foot{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;align-items:center;padding:.8rem 1rem;font-size:.9rem}
+#msg{font-weight:500}
+#fix{font:inherit;font-weight:600;font-size:.9rem;background:var(--accent);color:var(--accent-ink);border:0;border-radius:6px;padding:.45rem .9rem;cursor:pointer}
+#fix[disabled]{opacity:.5;cursor:default}
+#reset{font:inherit;font-size:.85rem;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;padding:0}
+.note{font-size:.8rem;color:var(--muted);margin:.6rem 0 0}
+
+/* listas */
+.two{display:grid;gap:2rem}
+@media(min-width:48rem){.two{grid-template-columns:1fr 1fr}}
+dl{margin:0}
+dt{font-weight:600}
+dd{margin:0 0 1rem;color:var(--muted)}
+.skills{display:grid;gap:1.5rem}
+@media(min-width:48rem){.skills{grid-template-columns:repeat(3,1fr)}}
+.skills h3{font-size:1.1rem;margin-bottom:.6rem}
+.skills ul{list-style:none;margin:0;padding:0}
+.skills li{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 0;border-bottom:1px solid var(--line)}
+.skills li span{color:var(--muted);font-size:.9rem;text-align:right}
+
+/* projetos */
+.proj{border-top:1px solid var(--line)}
+.row{display:grid;gap:.4rem 1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--line)}
+@media(min-width:48rem){.row{grid-template-columns:1.2fr 2fr auto;align-items:start}}
+.row h3{font-size:1.15rem}
+.row p{margin:0;color:var(--muted);font-size:1rem}
+.tags{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-top:.35rem}
+.badge{display:inline-block;font-size:.8rem;font-weight:600;padding:.15rem .6rem;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
+.badge.on{background:var(--ok-bg);color:var(--accent);border-color:transparent}
+.links{display:flex;gap:1rem;font-size:.95rem;margin-top:.5rem}
+.links a{color:var(--accent);font-weight:500}
+
+/* trajetória */
+.tl{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:2px solid var(--line)}
+.tl li{position:relative;padding-bottom:1.75rem}
+.tl li::before{content:"";position:absolute;left:calc(-1.4rem - 7px);top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl time{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.tl h3{font-size:1.15rem;margin:.1rem 0 .4rem}
+.tl ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+
+/* contato */
+.contact a.big{display:block;font-family:var(--display);font-size:clamp(1.3rem,4.5vw,2rem);font-weight:700;text-decoration:none;padding:.5rem 0;border-bottom:1px solid var(--line)}
+.contact a.big:hover{color:var(--accent)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#topo">Vitória Tayná</a>
+    <nav aria-label="Seções">
+      <a href="#sobre">Sobre</a><a href="#tecnologias">Tecnologias</a><a href="#projetos">Projetos</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a>
+    </nav>
+    <button id="tema" type="button" aria-label="Alternar tema claro e escuro">◐</button>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Eu conferia folha de pagamento. Agora aprendo a construir os sistemas que fazem essa conferência.</h1>
+      <p class="lead">Sou Vitória, estudante de Engenharia da Computação e de Análise e Desenvolvimento de Sistemas, em Recife. Busco estágio em análise de dados, desenvolvimento Python e automação de processos.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projetos">Ver projetos</a>
+        <a class="btn ghost" href="#contato">Falar comigo</a>
+      </div>
+    </div>
+    <div>
+      <div class="sheet" aria-label="Exemplo interativo de conferência de folha, com dados fictícios">
+        <div class="sheet-top">Conferência de folha <span>dados fictícios</span></div>
+        <div class="scroll">
+        <table>
+          <thead><tr><th>Matrícula</th><th>Colaborador</th><th class="n">Salário base</th><th>Status</th></tr></thead>
+          <tbody id="linhas">
+            <tr><td>1001</td><td>Ana Souza</td><td class="n">2.850,00</td><td class="status-ok">OK</td></tr>
+            <tr><td>1002</td><td>Bruno Lima</td><td class="n">3.120,00</td><td class="status-ok">OK</td></tr>
+            <tr class="flag" id="alvo"><td>1003</td><td>Carla Dias</td><td class="n">2.640,00</td><td id="st">CPF duplicado</td></tr>
+            <tr><td>1004</td><td>Diego Nunes</td><td class="n">3.400,00</td><td class="status-ok">OK</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="sheet-foot">
+          <span id="msg" role="status">1 inconsistência encontrada</span>
+          <span><button id="fix" type="button">Corrigir cadastro</button> <button id="reset" type="button" hidden>Refazer</button></span>
+        </div>
+      </div>
+      <p class="note">Era esse tipo de erro que eu procurava no Excel e no TOTVS antes do fechamento da folha. Nomes e valores desta tabela são inventados.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap two">
+    <div>
+      <h2>Sobre mim</h2>
+      <p>Trabalhei dois anos em Departamento Pessoal e RH. Lá aprendi que um número errado numa planilha vira problema na vida de alguém, então aprendi a conferir, validar e documentar.</p>
+      <p>Hoje levo esse cuidado para a programação. Estou migrando para TI e quero trabalhar onde dados, sistemas e rotina administrativa se encontram.</p>
+    </div>
+    <div>
+      <h2>Formação</h2>
+      <dl>
+        <dt>Engenharia da Computação</dt>
+        <dd>UniFBV · 7º semestre</dd>
+        <dt>Análise e Desenvolvimento de Sistemas</dt>
+        <dd>CESAR School, via programa Embarque Digital · 2º semestre</dd>
+        <dt>Conclusão prevista</dt>
+        <dd>Junho de 2028, nos dois cursos</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="tecnologias">
+  <div class="wrap">
+    <h2>Tecnologias</h2>
+    <div class="skills">
+      <div>
+        <h3>Dados e planilhas</h3>
+        <ul>
+          <li>Excel <span>uso profissional diário</span></li>
+          <li>SQL <span>fundamentos, em estudo</span></li>
+          <li>Pandas e Matplotlib <span>em estudo</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Programação</h3>
+        <ul>
+          <li>Python <span>noções, em prática</span></li>
+          <li>HTML, CSS e JavaScript <span>noções, em prática</span></li>
+          <li>C <span>em estudo na faculdade</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Sistemas e ferramentas</h3>
+        <ul>
+          <li>ERP TOTVS <span>uso profissional</span></li>
+          <li>Pacote Office <span>uso diário</span></li>
+          <li>Git e GitHub <span>básico, em prática</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <h2>Projetos</h2>
+    <p>Os três primeiros já estão no GitHub. Os outros estão em desenvolvimento e vão ganhar link quando tiverem código, testes e documentação.</p>
+    <div class="proj">
+      <article class="row">
+        <div><h3>Página de cadastro web</h3><div class="tags">HTML · CSS · JavaScript</div></div>
+        <div><p>Cadastro de nomes em uma lista, publicado no GitHub Pages. Será evoluído para um sistema com validação, busca, edição e exclusão.</p>
+          <div class="links"><a href="https://github.com/taynaadev/pagina-cadastro-web">Repositório</a><a href="https://taynaadev.github.io/pagina-cadastro-web/">Demonstração</a></div></div>
+        <div><span class="badge on">Publicado</span></div>
+      </article>
+      <article class="row">
+        <div><h3>Sistema de cadastro em Python</h3><div class="tags">Python</div></div>
+        <div><p>Cadastro e listagem de funcionários no terminal. Próximo passo: validação de dados e banco SQLite.</p>
+          <div class="links"><a href="https://github.com/taynaadev/sistema-cadastro-python">Repositório</a></div></div>
+        <div><span class="badge on">Publicado</span></div>
+      </article>
+      <article class="row">
+        <div><h3>Programação Imperativa e Funcional</h3><div class="tags">C</div></div>
+        <div><p>Atividades da disciplina na CESAR School, 2026.2.</p>
+          <div class="links"><a href="https://github.com/taynaadev/pif-cesar-school">Repositório</a></div></div>
+        <div><span class="badge on">Publicado</span></div>
+      </article>
+      <article class="row">
+        <div><h3>Análise de dados com Python</h3><div class="tags">Python · Pandas · Seaborn</div></div>
+        <div><p>Limpeza, análise exploratória e relatório com conclusões, a partir de uma base de dados.</p></div>
+        <div><span class="badge">Em desenvolvimento</span></div>
+      </article>
+      <article class="row">
+        <div><h3>Dashboard administrativo em Excel</h3><div class="tags">Excel · PROCX · Tabelas dinâmicas</div></div>
+        <div><p>Indicadores de colaboradores e despesas, com dados fictícios identificados como tal.</p></div>
+        <div><span class="badge">Em desenvolvimento</span></div>
+      </article>
+      <article class="row">
+        <div><h3>Banco de dados e SQL</h3><div class="tags">SQL · Modelagem</div></div>
+        <div><p>Modelagem de um banco, consultas com JOIN, GROUP BY e subconsultas, respondendo perguntas de negócio.</p></div>
+        <div><span class="badge">Em desenvolvimento</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="trajetoria">
+  <div class="wrap">
+    <h2>Trajetória profissional</h2>
+    <ol class="tl">
+      <li><time>2024 – 2026</time><h3>Assistente de Departamento Pessoal · Grupo LOS</h3>
+        <ul><li>Conferência de folha de pagamento em Excel, com fórmulas e filtros.</li><li>Cadastro e atualização de colaboradores no ERP TOTVS, com correção de inconsistências.</li><li>Auditoria e validação das informações antes do fechamento.</li><li>Suporte a colegas no uso do TOTVS.</li></ul></li>
+      <li><time>2024</time><h3>Assistente de Recursos Humanos · Inove Terceirização de Serviços</h3>
+        <ul><li>Organização e controle de dados de colaboradores.</li><li>Apoio em processos de admissão em sistemas internos.</li></ul></li>
+      <li><time>2023 – 2024</time><h3>Jovem Aprendiz · Clínica SiM</h3>
+        <ul><li>Registro e organização de informações em sistemas.</li><li>Apoio em rotinas administrativas.</li></ul></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <div class="wrap">
+    <h2>Contato</h2>
+    <p>Estou procurando estágio em TI. Pode me chamar por onde preferir.</p>
+    <a class="big" href="mailto:vitoria.tayna19@gmail.com">vitoria.tayna19@gmail.com</a>
+    <a class="big" href="https://www.linkedin.com/in/vitoriatayna">LinkedIn</a>
+    <a class="big" href="https://github.com/taynaadev">GitHub</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Vitória Tayná Regis Gomes · Recife, PE</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  try{var t=localStorage.getItem("tema");if(t)root.setAttribute("data-theme",t);}catch(e){}
+  document.getElementById("tema").addEventListener("click",function(){
+    var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme: dark)").matches);
+    var next=dark?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem("tema",next);}catch(e){}
+  });
+  var alvo=document.getElementById("alvo"),st=document.getElementById("st"),
+      msg=document.getElementById("msg"),fix=document.getElementById("fix"),reset=document.getElementById("reset");
+  fix.addEventListener("click",function(){
+    alvo.className="fixed";st.textContent="OK";st.className="status-ok";
+    msg.textContent="Nenhuma inconsistência. Pronta para fechar.";
+    fix.disabled=true;reset.hidden=false;
+  });
+  reset.addEventListener("click",function(){
+    alvo.className="flag";st.textContent="CPF duplicado";st.className="";
+    msg.textContent="1 inconsistência encontrada";
+    fix.disabled=false;reset.hidden=true;
+  });
+})();
+</script>
+</body>
+</html>
